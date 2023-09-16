@@ -1,0 +1,58 @@
+name: weather_app
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.6 <4.0.0'
+
+dependencies:
+  cupertino_icons: # cupertino icons
+  logger: # log events in clear way insted of (print)
+  flutter_screenutil: # make app responsive
+  dio: # for api requests
+  http_mock_adapter: # mocking dio for testing
+  pretty_dio_logger: # for dio api logging and debugging
+  shared_preferences: # shared preferences persistence key value store
+  location: # for location
+  flutter_launcher_icons: # change app icon
+  flutter_svg: # for svg icons
+  smooth_page_indicator: # for onboarding screen
+  flutter_spinkit: # for loading indicator
+  cached_network_image: # for network image
+  carousel_slider: # for image slider
+  flutter_animate: # for animation
+
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/vectors/
+    - assets/fonts/
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 700
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf
+          weight: 300
+        - asset: assets/fonts/Cairo-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Cairo-SemiBold.ttf
+          weight: 900
