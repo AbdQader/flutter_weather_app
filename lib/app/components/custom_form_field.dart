@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../../config/theme/my_fonts.dart';
 
@@ -106,7 +107,7 @@ class _CustomFormFiledState extends State<CustomFormFiled> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    final theme = context.theme;
     return Material(
       color: Colors.transparent,
       child: Theme(

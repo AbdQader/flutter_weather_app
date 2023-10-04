@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../app/data/local/my_shared_pref.dart';
 import 'dark_theme_colors.dart';
@@ -12,7 +13,9 @@ class MyTheme {
       
       // main color (app bar,tabs..etc)
       primaryColor: isLight ? LightThemeColors.primaryColor : DarkThemeColors.primaryColor,
-      
+      primaryColorLight: isLight ? LightThemeColors.primaryColorLight : DarkThemeColors.primaryColorLight,
+      primaryColorDark: isLight ? LightThemeColors.primaryColorDark : DarkThemeColors.primaryColorDark,
+
       // canvas color
       canvasColor: isLight ? LightThemeColors.canvasColor : DarkThemeColors.canvasColor,
 
@@ -44,6 +47,14 @@ class MyTheme {
         color: isLight ? LightThemeColors.dividerColor : DarkThemeColors.dividerColor,
       ),
 
+      // divider color
+      dividerColor: isLight ? LightThemeColors.dividerColor : DarkThemeColors.dividerColor,
+
+      // dialogBackgroundColor: isLight ? LightThemeColors.cardColor : DarkThemeColors.cardColor,
+      // dialogTheme: DialogTheme(
+      //   backgroundColor: isLight ? LightThemeColors.cardColor : DarkThemeColors.cardColor,
+      // ),
+
       // app background color
       scaffoldBackgroundColor: isLight ? LightThemeColors.scaffoldBackgroundColor : DarkThemeColors.scaffoldBackgroundColor,
 
@@ -54,9 +65,6 @@ class MyTheme {
 
       // appBar theme
       appBarTheme: MyStyles.getAppBarTheme(isLightTheme: isLight),
-
-      // bottom navigation bar theme
-      bottomNavigationBarTheme: MyStyles.getBottomNavigationBarTheme(isLightTheme: isLight),
 
       // elevated button theme
       elevatedButtonTheme: MyStyles.getElevatedButtonTheme(isLightTheme: isLight),
@@ -72,6 +80,11 @@ class MyTheme {
 
       // list tile theme
       listTileTheme: MyStyles.getListTileThemeData(isLightTheme: isLight),
+
+      // custom themes
+      extensions: [
+        MyStyles.getShimmerTheme(isLightTheme: isLight),
+      ]
     );
   }
 
@@ -85,7 +98,7 @@ class MyTheme {
     MySharedPref.setThemeIsLight(!isLightTheme);
 
     // *) let GetX change theme
-    // Get.changeThemeMode(!isLightTheme ? ThemeMode.light : ThemeMode.dark);
+    Get.changeThemeMode(!isLightTheme ? ThemeMode.light : ThemeMode.dark);
   }
 
   /// check if the theme is light or dark

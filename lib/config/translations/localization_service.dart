@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../app/data/local/my_shared_pref.dart';
 import 'ar_AR/ar_ar_translation.dart';
 import 'en_US/en_us_translation.dart';
 
-class LocalizationService {
+class LocalizationService extends Translations {
   // prevent creating instance
   LocalizationService._();
 
@@ -26,11 +27,12 @@ class LocalizationService {
 
   // supported languages fonts family (must be in assets & pubspec yaml) or you can use google fonts
   static Map<String,TextStyle> supportedLanguagesFontsFamilies = {
-    'en' : const TextStyle(fontFamily: 'Poppins'),
+    //'en' : const TextStyle(fontFamily: 'Poppins'),
+    'en' : const TextStyle(fontFamily: 'Roboto'),
     'ar': const TextStyle(fontFamily: 'Cairo'),
   };
 
-  //@override
+  @override
   Map<String, Map<String, String>> get keys => {
     'en_US': enUs,
     'ar_AR': arAR,
@@ -47,9 +49,9 @@ class LocalizationService {
     if(!isLanguageSupported(languageCode)) return;
     // update current language in shared pref
     await MySharedPref.setCurrentLanguage(languageCode);
-    /* if(!Get.testMode) {
+    if(!Get.testMode) {
       Get.updateLocale(supportedLanguages[languageCode]!);
-    } */
+    }
   }
 
   /// check if the language is english

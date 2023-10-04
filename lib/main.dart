@@ -1,20 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
-void main() {
-  runApp(const MainApp());
-}
+import 'app/data/local/my_shared_pref.dart';
+import 'app/modules/splash/bindings/splash_binding.dart';
+import 'app/routes/app_pages.dart';
+import 'config/theme/my_theme.dart';
+import 'config/translations/localization_service.dart';
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+void main() async {
+  // wait for bindings
+  WidgetsFlutterBinding.ensureInitialized();
 
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
-  }
+  // init shared preference
+  await MySharedPref.init();
+  
+  // init date format language
+  await initializeDateFormatting(LocalizationService.getCurrentLocal().languageCode);
+
+  runApp(
+    ScreenUtilInit(
+      designSize: const Size(390, 844),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      useInheritedMediaQuery: true,
+      rebuildFactor: (old, data) => true,
+      builder: (context, widget) {
+        return GetMaterialApp(
+          title: 'Weather App',
+          useInheritedMediaQuery: true,
+          debugShowCheckedModeBanner: false,
+          builder: (context,widget) {
+            bool themeIsLight = MySharedPref.getThemeIsLight();
+            return Theme(
+              data: MyTheme.getThemeData(isLight: themeIsLight),
+              child: MediaQuery(
+                data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+                child: widget!,
+              ),
+            );
+          },
+          initialBinding: SplashBinding(),
+          initialRoute: AppPages.INITIAL, // first screen to show when app is running
+          getPages: AppPages.routes, // app screens
+          locale: MySharedPref.getCurrentLocal(), // app language
+          translations: LocalizationService.getInstance(), // localization services in app (controller app language)
+        );
+      },
+    ),
+  );
 }

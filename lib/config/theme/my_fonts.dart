@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../app/data/local/my_shared_pref.dart';
+import '../translations/localization_service.dart';
+
 class MyFonts {
   // return the right font depending on app language
-  // static TextStyle get getAppFontType => LocalizationService
-  //   .supportedLanguagesFontsFamilies[MySharedPref.getCurrentLocal()
-  //   .languageCode]!;
-
-  static TextStyle get getAppFontType => const TextStyle(fontFamily: 'Poppins');
+  static TextStyle get getAppFontType => LocalizationService
+    .supportedLanguagesFontsFamilies[MySharedPref.getCurrentLocal()
+    .languageCode]!;
 
   // headlines text font
   static TextStyle get displayTextStyle => getAppFontType;
@@ -30,14 +31,14 @@ class MyFonts {
   // body font size
   static double get bodyLargeSize => 16.sp;
   static double get bodyMediumSize => 14.sp;
-  static double get bodySmallTextSize => 12.sp;
+  static double get bodySmallTextSize => 10.sp;
   // display font size
-  static double get displayLargeSize => 20.sp;
-  static double get displayMediumSize => 18.sp;
-  static double get displaySmallSize => 14.sp;
+  static double get displayLargeSize => 64.sp;
+  static double get displayMediumSize => 20.sp;
+  static double get displaySmallSize => 18.sp;
 
   //button font size
-  static double get buttonTextSize => 16.sp;
+  static double get buttonTextSize => 18.sp;
 
   //chip font size
   static double get chipTextSize => 10.sp;

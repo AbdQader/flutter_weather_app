@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class CustomIconButton extends StatelessWidget {
   final Function()? onPressed;
@@ -20,10 +21,10 @@ class CustomIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    final theme = context.theme;
     return SizedBox(
-      width: width ?? 55.w,
-      height: height ?? 55.h,
+      width: width ?? 50.w,
+      height: height ?? 50.h,
       child: Material(
         color: backgroundColor ?? theme.canvasColor,
         shape: CircleBorder(

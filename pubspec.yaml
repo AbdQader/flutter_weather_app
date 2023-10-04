@@ -4,10 +4,11 @@ publish_to: 'none'
 version: 0.1.0
 
 environment:
-  sdk: '>=3.0.6 <4.0.0'
+  sdk: '>=3.0.1 <4.0.0'
 
 dependencies:
   cupertino_icons: # cupertino icons
+  get: # for state management and context less stuff
   logger: # log events in clear way insted of (print)
   flutter_screenutil: # make app responsive
   dio: # for api requests
@@ -21,6 +22,10 @@ dependencies:
   flutter_spinkit: # for loading indicator
   cached_network_image: # for network image
   carousel_slider: # for image slider
+  shimmer: # for shimmer effect
+  intl: # for date format
+  step_progress_indicator: # for progress indicator
+  lottie: # for Adobe After Effects animations
   flutter_animate: # for animation
 
   flutter:
@@ -31,6 +36,13 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^2.0.0
 
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/app_icon.png"
+  adaptive_icon_background: "#6151C3"
+  adaptive_icon_foreground: "assets/images/app_icon_foreground.png"
+
 flutter:
   uses-material-design: true
 
@@ -38,6 +50,7 @@ flutter:
     - assets/images/
     - assets/vectors/
     - assets/fonts/
+    - assets/data/
 
   fonts:
     - family: Poppins

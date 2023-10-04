@@ -5,8 +5,24 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dark_theme_colors.dart';
 import 'my_fonts.dart';
 import 'light_theme_colors.dart';
+import 'theme_extensions/shimmer_theme_data.dart';
 
 class MyStyles {
+  /// custom header theme
+  static ShimmerThemeData getShimmerTheme({
+    required bool isLightTheme
+  }) => ShimmerThemeData(
+    backgroundColor: isLightTheme
+      ? LightThemeColors.shimmerBackgroundColor
+      : DarkThemeColors.shimmerBackgroundColor,
+    baseColor: isLightTheme
+      ? LightThemeColors.shimmerBaseColor
+      : DarkThemeColors.shimmerBaseColor,
+    highlightColor: isLightTheme
+      ? LightThemeColors.shimmerHighlightColor
+      : DarkThemeColors.shimmerHighlightColor,
+  );
+
   ///icons theme
   static IconThemeData getIconTheme({required bool isLightTheme}) =>
       IconThemeData(
@@ -19,6 +35,7 @@ class MyStyles {
   static AppBarTheme getAppBarTheme({required bool isLightTheme}) =>
       AppBarTheme(
         elevation: 0,
+        scrolledUnderElevation: 0,
         centerTitle: true,
         systemOverlayStyle: isLightTheme
             ? SystemUiOverlayStyle.light
@@ -37,29 +54,12 @@ class MyStyles {
             : DarkThemeColors.appbarColor,
       );
 
-  ///app bar theme
-  static BottomNavigationBarThemeData getBottomNavigationBarTheme(
-          {required bool isLightTheme}) =>
-      BottomNavigationBarThemeData(
-        elevation: 0.0,
-        backgroundColor: isLightTheme
-            ? LightThemeColors.bnbBackgroundColor
-            : DarkThemeColors.bnbBackgroundColor,
-        selectedItemColor: isLightTheme
-            ? LightThemeColors.bnbSelectedItemColor
-            : DarkThemeColors.bnbSelectedItemColor,
-        unselectedItemColor: isLightTheme
-            ? LightThemeColors.bnbUnselectedItemColor
-            : DarkThemeColors.bnbUnselectedItemColor,
-      );
-
   ///text theme
   static TextTheme getTextTheme({required bool isLightTheme}) => TextTheme(
         labelLarge: MyFonts.buttonTextStyle.copyWith(
           fontSize: MyFonts.buttonTextSize,
         ),
         bodyLarge: (MyFonts.bodyTextStyle).copyWith(
-          fontWeight: FontWeight.bold,
           fontSize: MyFonts.bodyLargeSize,
           color: isLightTheme
               ? LightThemeColors.bodyTextColor
@@ -71,18 +71,18 @@ class MyStyles {
               ? LightThemeColors.bodyTextColor
               : DarkThemeColors.bodyTextColor,
         ),
-        displayLarge: (MyFonts.displayTextStyle).copyWith(
-          fontSize: MyFonts.displayLargeSize,
-          fontWeight: FontWeight.bold,
-          color: isLightTheme
-              ? LightThemeColors.displayTextColor
-              : DarkThemeColors.displayTextColor,
-        ),
         bodySmall: TextStyle(
             color: isLightTheme
                 ? LightThemeColors.bodySmallTextColor
                 : DarkThemeColors.bodySmallTextColor,
             fontSize: MyFonts.bodySmallTextSize),
+        displayLarge: (MyFonts.displayTextStyle).copyWith(
+          fontSize: MyFonts.displayLargeSize,
+          fontWeight: FontWeight.normal,
+          color: isLightTheme
+              ? LightThemeColors.displayTextColor
+              : DarkThemeColors.displayTextColor,
+        ),
         displayMedium: (MyFonts.displayTextStyle).copyWith(
             fontSize: MyFonts.displayMediumSize,
             fontWeight: FontWeight.bold,
@@ -91,7 +91,7 @@ class MyStyles {
                 : DarkThemeColors.displayTextColor),
         displaySmall: (MyFonts.displayTextStyle).copyWith(
           fontSize: MyFonts.displaySmallSize,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w500,
           color: isLightTheme
               ? LightThemeColors.displayTextColor
               : DarkThemeColors.displayTextColor,

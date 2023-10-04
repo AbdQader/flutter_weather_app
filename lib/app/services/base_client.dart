@@ -6,6 +6,7 @@ import 'package:logger/logger.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import '../../config/translations/strings_enum.dart';
+import '../components/custom_snackbar.dart';
 import 'api_exceptions.dart';
 
 enum RequestType {
@@ -254,12 +255,11 @@ class BaseClient {
   /// from api it will show the reason (the dio message)
   static handleApiError(ApiException apiException) {
     String msg = apiException.toString();
-    Logger().e(msg);
-    //CustomSnackBar.showCustomErrorToast(message: msg);
+    CustomSnackBar.showCustomErrorToast(message: msg);
   }
 
   /// handle errors without response (500, out of time, no internet,..etc)
   static _handleError(String msg) {
-    //CustomSnackBar.showCustomErrorToast(message: msg);
+    CustomSnackBar.showCustomErrorToast(message: msg);
   }
 }

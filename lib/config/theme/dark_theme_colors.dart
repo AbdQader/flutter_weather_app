@@ -1,34 +1,30 @@
 import 'package:flutter/material.dart';
 
-class DarkThemeColors
-{
+class DarkThemeColors {
   // PRIMARY
-  static const Color primaryColor = Color(0xFF1DB854);
+  static const Color primaryColor = Color(0xFF6151C3);
+  static const Color primaryColorLight = Color(0xFFC0B9E7);
+  static const Color primaryColorDark = Color(0xFF8174CF);
 
   // SECONDARY
-  static Color accentColor = primaryColor;
+  static const Color accentColor = Color(0xFF2A3034);
 
   //Appbar
   static const Color appbarColor = Colors.transparent;
 
-  //BOTTOM NAVIGATION BAR
-  static const Color bnbBackgroundColor = Color(0xFF24292D);
-  static const Color bnbSelectedItemColor = primaryColor;
-  static const Color bnbUnselectedItemColor = Color(0xFF5E5F5F);
-
   //SCAFFOLD
-  static const Color scaffoldBackgroundColor = Color(0xff1B1E22);
-  static const Color backgroundColor = Color(0xff1B1E22);
-  static const Color dividerColor = Color(0xFF24292D);
-  static const Color cardColor = Color(0xff24292D);
-  static const Color canvasColor = Color(0xff24292D);
+  static const Color scaffoldBackgroundColor = Color(0xFF1B1E22);
+  static const Color backgroundColor = Color(0xFF080713);
+  static const Color dividerColor = Color(0xFF2A3034);
+  static const Color canvasColor = Color(0xFF24292D);
+  static const Color cardColor = Color(0xFF1B1E22);
 
   // SHADOW
   static const Color shadowColor = Color(0xFF1B1E22);
 
   //ICONS
   static const Color appBarIconsColor = Colors.white;
-  static const Color iconColor = Color(0xFFAAB6C3);
+  static const Color iconColor = Colors.white;
 
   //BUTTON
   static const Color buttonColor = primaryColor;
@@ -37,17 +33,17 @@ class DarkThemeColors
   static const Color buttonDisabledTextColor = Colors.black;
 
   //TEXT
-  static const Color bodyTextColor = Color(0xFF7A7A7A);
+  static const Color bodyTextColor = Color(0xFF6B6A71);//Color(0xFF7A7A7A);
   static const Color displayTextColor = Colors.white;
-  static const Color bodySmallTextColor =  Color(0xff7C7C7C);
-  static const Color hintTextColor = Color(0xff7A7A7A);
+  static const Color bodySmallTextColor =  Colors.white;
+  static const Color hintTextColor = Color(0xFF7A7A7A);
 
   //chip
   static const Color chipBackground = Color(0xFF24292D);
   static const Color chipTextColor = Colors.white;
 
   // progress bar indicator
-  static const Color progressIndicatorColor = Color(0xFF40A76A);
+  static const Color progressIndicatorColor = primaryColor;
 
   // list tile
   static const Color listTileTitleColor = Colors.white;
@@ -56,11 +52,9 @@ class DarkThemeColors
   static const Color listTileIconColor = Colors.white;
 
   //------------------- custom theme (extensions) ------------------- //
-  // header containers
-  static const Color headerContainerBackgroundColor = Color(0XFF2A3034);
-  static const Color commonFunctionsCardColor = Color(0XFF2A3034);
-  static const Color searchDividerColor = Color(0XFF2A3034);
-  static const Color carSpecsBackgroundColor = Color(0XFF2A3034);
-  static const Color reviewActionIconColor = Colors.white;
+  // shimmer theme
+  static const Color shimmerBackgroundColor = Color(0XFF24292D);
+  static const Color shimmerBaseColor = Color(0XFF2A3034);
+  static const Color shimmerHighlightColor = Color(0XFF2A3034);
   
 }
