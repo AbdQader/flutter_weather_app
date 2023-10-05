@@ -1,6 +1,7 @@
 class Constants {
   // api key
-  static const apiKey = '6d5f92f6edec476bb93132444231409';
+  static const mApiKey = 'Your API Key';
+  
 
   // api
   static const baseUrl = 'http://api.weatherapi.com/v1';
