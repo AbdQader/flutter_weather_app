@@ -61,7 +61,6 @@ extension DateTimeExtension on DateTime {
   /// convert the DateTime to day => 2023-09-24 = Sunday
   String convertToDay() {
     if (day == DateTime.now().day) return Strings.today.tr;
-    //return DateFormat('EEEE').format(date);
     return DateFormat.EEEE(LocalizationService.getCurrentLocal().languageCode)
       .format(this);
   }

@@ -13,14 +13,13 @@ class Strings {
   static const String urlNotFound = 'Url not found';
   static const String retry = 'retry';
 
-
   static const String welcomScreenTitle = 'welcomScreenTitle';
   static const String welcomScreenSubtitle = 'welcomScreenSubtitle';
   static const String getStarted = 'getStarted';
   static const String alreadyHaveAnAccount = 'alreadyHaveAnAccount';
   static const String login = 'login';
 
-  static const String helloArian = 'helloArian';
+  static const String helloAbdQader = 'helloAbdQader';
   static const String discoverTheWeather = 'discoverTheWeather';
   static const String aroundTheWorld = 'aroundTheWorld';
 
@@ -53,6 +52,4 @@ class Strings {
   static const String southeast = 'southeast';
   static const String southwest = 'southwest';
   static const String northwest = 'northwest';
-
-  //static const String  = '';
 }

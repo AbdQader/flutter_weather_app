@@ -1,6 +1,4 @@
 import 'package:get/get.dart';
-import 'package:logger/logger.dart';
-import 'package:weather_app/app/components/custom_loading_overlay.dart';
 
 import '../../../../config/theme/my_theme.dart';
 import '../../../../config/translations/localization_service.dart';
@@ -47,17 +45,6 @@ class HomeController extends GetxController {
     super.onInit();
   }
 
-  @override
-  void onReady() async {
-    //getCurrentWeather('37.4062233,-122.078165');
-    /* if (!await LocationService().hasLocationPermission()) {
-      Get.dialog(const LocationDialog());
-    } else {
-      getUserLocation();
-    } */
-    super.onReady();
-  }
-
   /// get the user location
   getUserLocation() async {
     var locationData = await LocationService().getUserLocation();
@@ -76,11 +63,6 @@ class HomeController extends GetxController {
         Constants.q: location,
         Constants.lang: currentLanguage,
       },
-      /* onLoading: () {
-        Logger().e('loading');
-        apiCallStatus = ApiCallStatus.loading;
-        update();
-      }, */
       onSuccess: (response) async {
         currentWeather = WeatherModel.fromJson(response.data);
         await getWeatherArroundTheWorld();
@@ -132,10 +114,8 @@ class HomeController extends GetxController {
   
   /// when the user press on change language icon
   onChangeLanguagePressed() async {
-    await LocalizationService.updateLanguage(
-      currentLanguage == 'ar' ? 'en' : 'ar',
-    );
-    currentLanguage = LocalizationService.getCurrentLocal().languageCode;
+    currentLanguage = currentLanguage == 'ar' ? 'en' : 'ar';
+    await LocalizationService.updateLanguage(currentLanguage);
     apiCallStatus = ApiCallStatus.loading;
     update();
     await getUserLocation();

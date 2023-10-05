@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:weather_app/utils/extensions.dart';
 
+import '../../../../../utils/extensions.dart';
 import '../../../../../config/translations/strings_enum.dart';
-import '../../../../../utils/constants.dart';
 import '../../../../components/custom_cached_image.dart';
 import '../../../../data/models/weather_details_model.dart';
 
@@ -29,11 +28,8 @@ class WeatherDetailsCard extends StatelessWidget {
       ),
       child: Column(
         children: [
-          //Image.asset(Constants.logo, width: 200.w, height: 200.h),
           30.verticalSpace,
           CustomCachedImage(
-            //imageUrl: 'https:${weatherDetails.current.condition.icon}',
-            //imageUrl: 'https:${forecastDay.day.condition.icon}',
             imageUrl: forecastDay.day.condition.icon.toHighRes().addHttpPrefix(),
             fit: BoxFit.cover,
             width: 150.w,
@@ -42,7 +38,6 @@ class WeatherDetailsCard extends StatelessWidget {
           ),
           30.verticalSpace,
           Text(
-            //'Rampura,Dhaka',
             '${weatherDetails.location.name.toRightCity()}, ${weatherDetails.location.country.toRightCountry()}',
             style: theme.textTheme.displaySmall?.copyWith(
               color: Colors.white,
@@ -51,8 +46,6 @@ class WeatherDetailsCard extends StatelessWidget {
           ),
           12.verticalSpace,
           Text(
-            //'20℃',
-            //'${weatherDetails.current.tempC.toInt()} ℃',
             '${forecastDay.day.maxtempC.toInt()}${Strings.celsius.tr}',
             style: theme.textTheme.displaySmall?.copyWith(
               fontSize: 64.sp,
@@ -61,8 +54,6 @@ class WeatherDetailsCard extends StatelessWidget {
           ),
           16.verticalSpace,
           Text(
-            //'Softly coldy',
-            //weatherDetails.current.condition.text,
             forecastDay.day.condition.text,
             style: theme.textTheme.displaySmall?.copyWith(
               color: Colors.white,

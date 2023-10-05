@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'dark_theme_colors.dart';
-import 'my_fonts.dart';
 import 'light_theme_colors.dart';
+import 'my_fonts.dart';
 import 'theme_extensions/shimmer_theme_data.dart';
 
 class MyStyles {

@@ -21,7 +21,7 @@ const Map<String, String> enUs = {
   Strings.alreadyHaveAnAccount : 'Already have an account? ',
   Strings.login : 'Login',
 
-  Strings.helloArian : 'Hello Arian',
+  Strings.helloAbdQader : 'Hello AbdQader',
   Strings.discoverTheWeather : 'Discover the weather',
   Strings.aroundTheWorld : 'Around the world',
 
@@ -54,6 +54,4 @@ const Map<String, String> enUs = {
   Strings.southeast : 'Southeast',
   Strings.southwest : 'Southwest',
   Strings.northwest : 'Northwest',
-
-  //Strings. : '',
 };

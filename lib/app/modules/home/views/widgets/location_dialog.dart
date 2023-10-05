@@ -44,7 +44,6 @@ class LocationDialog extends StatelessWidget {
             ),
             24.verticalSpace,
             Text(
-              //'Location permission needed',
               Strings.locationPermissionNeeded.tr,
               style: theme.textTheme.displayMedium,
               textAlign: TextAlign.center,
@@ -55,7 +54,6 @@ class LocationDialog extends StatelessWidget {
             ),
             16.verticalSpace,
             Text(
-              //'Please enable location permission to get more accurate weather information',
               Strings.pleaseEnableLocationPermission.tr,
               style: theme.textTheme.bodyMedium?.copyWith(height: 1),
               textAlign: TextAlign.center,
@@ -70,7 +68,6 @@ class LocationDialog extends StatelessWidget {
                 Get.back();
                 HomeController.instance.getUserLocation();
               },
-              //text: 'Allow location',
               text: Strings.allowLocation.tr,
               fontSize: 18.sp,
               backgroundColor: theme.primaryColor,

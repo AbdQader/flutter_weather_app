@@ -48,7 +48,6 @@ class WelcomeView extends GetView<WelcomeController> {
                   24.verticalSpace,
                   Text(
                     Strings.welcomScreenTitle.tr,
-                    //'Expore global map of wind, weather, and ocean conditions',
                     style: theme.textTheme.displayMedium,
                     textAlign: TextAlign.center,
                   ).animate().fade().slideY(
@@ -59,7 +58,6 @@ class WelcomeView extends GetView<WelcomeController> {
                   16.verticalSpace,
                   Text(
                     Strings.welcomScreenSubtitle.tr,
-                    //'Planing your trip become more easier with ideate weather app. you can instantly see the whole word weather within few second',
                     style: theme.textTheme.bodyMedium?.copyWith(height: 1),
                     textAlign: TextAlign.center,
                   ).animate(delay: 300.ms).fade().slideY(
@@ -70,7 +68,6 @@ class WelcomeView extends GetView<WelcomeController> {
                   const Spacer(),
                   CustomButton(
                     onPressed: () => Get.toNamed(Routes.HOME),
-                    //text: 'Get Started',
                     text: Strings.getStarted.tr,
                     fontSize: 18.sp,
                     backgroundColor: theme.primaryColor,
@@ -89,12 +86,10 @@ class WelcomeView extends GetView<WelcomeController> {
                       children: [
                         TextSpan(
                           text: Strings.alreadyHaveAnAccount.tr,
-                          //text: 'Already have an account? ',
                           style: theme.textTheme.bodyMedium,
                         ),
                         TextSpan(
                           text: Strings.login.tr,
-                          //text: 'Login',
                           style: theme.textTheme.bodyMedium?.copyWith(
                             color: theme.primaryColor,
                           ),

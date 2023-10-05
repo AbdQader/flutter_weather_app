@@ -17,7 +17,9 @@ void main() async {
   await MySharedPref.init();
   
   // init date format language
-  await initializeDateFormatting(LocalizationService.getCurrentLocal().languageCode);
+  await initializeDateFormatting(
+    LocalizationService.getCurrentLocal().languageCode
+  );
 
   runApp(
     ScreenUtilInit(
@@ -32,9 +34,10 @@ void main() async {
           useInheritedMediaQuery: true,
           debugShowCheckedModeBanner: false,
           builder: (context,widget) {
-            bool themeIsLight = MySharedPref.getThemeIsLight();
             return Theme(
-              data: MyTheme.getThemeData(isLight: themeIsLight),
+              data: MyTheme.getThemeData(
+                isLight: MySharedPref.getThemeIsLight()
+              ),
               child: MediaQuery(
                 data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
                 child: widget!,
@@ -42,10 +45,10 @@ void main() async {
             );
           },
           initialBinding: SplashBinding(),
-          initialRoute: AppPages.INITIAL, // first screen to show when app is running
-          getPages: AppPages.routes, // app screens
-          locale: MySharedPref.getCurrentLocal(), // app language
-          translations: LocalizationService.getInstance(), // localization services in app (controller app language)
+          initialRoute: AppPages.INITIAL,
+          getPages: AppPages.routes,
+          locale: MySharedPref.getCurrentLocal(),
+          translations: LocalizationService.getInstance(),
         );
       },
     ),

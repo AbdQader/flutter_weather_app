@@ -15,14 +15,13 @@ final Map<String, String> arAR = {
   Strings.urlNotFound : 'مشكلة في الرابط',
   Strings.retry : 'اعادة المحاولة',
 
-
   Strings.welcomScreenTitle : 'استكشف الخريطة العالمية لظروف الرياح والطقس والمحيطات',
   Strings.welcomScreenSubtitle : 'يصبح التخطيط لرحلتك أسهل مع تطبيق الطقس المثالي. يمكنك رؤية كلمة الطقس بأكملها على الفور في غضون ثوانٍ قليلة',
   Strings.getStarted : 'البدء',
   Strings.alreadyHaveAnAccount : 'هل لديك حساب؟ ',
   Strings.login : 'تسجيل الدخول',
 
-  Strings.helloArian : 'مرحباً أريان',
+  Strings.helloAbdQader : 'مرحباً عبدالقادر',
   Strings.discoverTheWeather : 'اكتشف الطقس',
   Strings.aroundTheWorld : 'حول العالم',
 
@@ -55,6 +54,4 @@ final Map<String, String> arAR = {
   Strings.southeast : 'جنوبية شرقية',
   Strings.southwest : 'جنوبية غربية',
   Strings.northwest : 'شمالية غربية', 
-
-  //Strings. : '',
 };

@@ -28,7 +28,6 @@ class WeatherDetailsItem extends StatelessWidget {
     final theme = context.theme;
     return Container(
       width: 180.w,
-      //height: 250.h,
       padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
         color: theme.cardColor,
@@ -38,13 +37,7 @@ class WeatherDetailsItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            //width: 150.w,
             height: 30.h,
-            //padding: EdgeInsets.only(right: 8.w),
-            /* padding: EdgeInsets.only(
-              right: controller.isEnLang ? 8.w : 0,
-              left: !controller.isEnLang ? 8.w : 0,
-            ), */
             padding: EdgeInsetsDirectional.only(end: 8.w),
             decoration: BoxDecoration(
               color: theme.canvasColor,

@@ -42,13 +42,11 @@ class HomeView extends GetView<HomeController> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              //'Hello Arian',
-                              Strings.helloArian.tr,
+                              Strings.helloAbdQader.tr,
                               style: theme.textTheme.displayMedium,
                             ),
                             8.verticalSpace,
                             Text(
-                              //'Discover the weather',
                               Strings.discoverTheWeather.tr,
                               style: theme.textTheme.displayMedium,
                             ),
@@ -58,11 +56,6 @@ class HomeView extends GetView<HomeController> {
                       20.horizontalSpace,
                       CustomIconButton(
                         onPressed: () => controller.onChangeThemePressed(),
-                        /* icon: SvgPicture.asset(
-                          Constants.search,
-                          fit: BoxFit.none,
-                          color: theme.iconTheme.color,
-                        ), */
                         icon: GetBuilder<HomeController>(
                           id: controller.themeId,
                           builder: (_) => Icon(
@@ -82,10 +75,6 @@ class HomeView extends GetView<HomeController> {
                           fit: BoxFit.none,
                           color: theme.iconTheme.color,
                         ),
-                        /* icon: Icon(
-                          Icons.language_rounded,
-                          color: theme.iconTheme.color,
-                        ), */
                         borderColor: theme.dividerColor,
                       ),
                     ],
@@ -107,7 +96,6 @@ class HomeView extends GetView<HomeController> {
                       itemCount: 3,
                       itemBuilder: (context, itemIndex, pageViewIndex) {
                         return WeatherCard(weather: controller.currentWeather);
-                        //return const WeatherCard(weather: null);
                       },
                     ).animate().fade().slideY(
                       duration: 300.ms,
@@ -133,7 +121,6 @@ class HomeView extends GetView<HomeController> {
                   ),
                   24.verticalSpace,
                   Text(
-                    //'Arround the world',
                     Strings.aroundTheWorld.tr,
                     style: theme.textTheme.displayMedium,
                   ).animate().fade().slideX(
@@ -146,11 +133,9 @@ class HomeView extends GetView<HomeController> {
                     shrinkWrap: true,
                     primary: false,
                     itemCount: controller.weatherArroundTheWorld.length,
-                    //itemCount: 3,
                     separatorBuilder: (context, index) => 16.verticalSpace,
                     itemBuilder: (context, index) => WeatherCard(
                       weather: controller.weatherArroundTheWorld[index],
-                      //weather: null,
                     ).animate(delay: (100 * index).ms).fade().slideY(
                       duration: 300.ms,
                       begin: 1,

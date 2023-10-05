@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:weather_app/utils/extensions.dart';
 
+import '../../../../../utils/extensions.dart';
 import '../../../../../config/translations/strings_enum.dart';
-import '../../../../../utils/constants.dart';
 import '../../../../components/custom_cached_image.dart';
 import '../../../../data/models/weather_model.dart';
 import '../../../../routes/app_pages.dart';
@@ -20,7 +19,6 @@ class WeatherCard extends StatelessWidget {
     return GestureDetector(
       onTap: () => Get.toNamed(Routes.WEATHER, arguments: '${weather.location.lat},${weather.location.lon}'),
       child: Container(
-        //height: 144.h,
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
         decoration: BoxDecoration(
           color: theme.primaryColor,
@@ -37,7 +35,6 @@ class WeatherCard extends StatelessWidget {
                 children: [
                   10.verticalSpace,
                   Text(
-                    //'Current Location',
                     weather.location.country.toRightCountry(),
                     style: theme.textTheme.displaySmall?.copyWith(
                       color: Colors.white,
@@ -47,7 +44,6 @@ class WeatherCard extends StatelessWidget {
                   ),
                   8.verticalSpace,
                   Text(
-                    //'California',
                     weather.location.name.toRightCity(),
                     style: theme.textTheme.displayMedium?.copyWith(
                       color: Colors.white,
@@ -57,7 +53,6 @@ class WeatherCard extends StatelessWidget {
                   ),
                   20.verticalSpace,
                   Text(
-                    //'Thunder',
                     weather.current.condition.text,
                     style: theme.textTheme.displaySmall?.copyWith(
                       color: Colors.white,
@@ -73,18 +68,14 @@ class WeatherCard extends StatelessWidget {
             Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                //Image.asset(Constants.logo, width: 100.w, height: 100.h),
                 CustomCachedImage(
-                  //imageUrl: 'https:${weather.current.condition.icon}',
                   imageUrl: weather.current.condition.icon.toHighRes().addHttpPrefix(),
                   fit: BoxFit.cover,
                   width: 100.w,
                   height: 100.h,
                   color: Colors.white,
                 ),
-                //10.verticalSpace,
                 Text(
-                  //'20℃',
                   '${weather.current.tempC.round()}${Strings.celsius.tr}',
                   style: theme.textTheme.displaySmall?.copyWith(
                     color: Colors.white,
