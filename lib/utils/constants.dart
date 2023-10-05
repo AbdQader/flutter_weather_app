@@ -3,7 +3,7 @@ class Constants {
   static const mApiKey = 'Your API Key';
   
 
-  // api
+  // api urls
   static const baseUrl = 'http://api.weatherapi.com/v1';
   static const currentWeatherApiUrl = '$baseUrl/current.json';
   static const forecastWeatherApiUrl = '$baseUrl/forecast.json';
